@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  rsyslog:
+    image: robbert229/rsyslog
+    ports:
+      - "514:514"
+      - "514:514/udp"
+    volumes:
+      - docker-rsyslog-storage:/var/log/syslog
+
+volumes:
+  docker-rsyslog-storage:
