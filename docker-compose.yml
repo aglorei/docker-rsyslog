@@ -7,7 +7,7 @@ services:
       - "514:514"
       - "514:514/udp"
     volumes:
-      - docker-rsyslog-storage:/var/log/syslog
+      - docker-rsyslog-storage:/var/log
 
 volumes:
   docker-rsyslog-storage:
