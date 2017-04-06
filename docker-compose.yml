@@ -3,7 +3,7 @@ version: '3'
 services:
   rsyslog:
     image: robbert229/rsyslog
-    retart: always
+    restart: always
     ports:
       - "514:514"
       - "514:514/udp"
