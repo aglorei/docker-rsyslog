@@ -8,7 +8,6 @@ services:
       - "514:514/udp"
     volumes:
       - docker-rsyslog-storage:/var/log
-      - ./rsyslog/logrotate.conf:/etc/logrotate.d/rsyslog:ro
 
 volumes:
   docker-rsyslog-storage:
