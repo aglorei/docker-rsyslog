@@ -9,6 +9,14 @@ services:
       - "514:514/udp"
     volumes:
       - docker-rsyslog-storage:/var/log
+  logrotate:
+    build:
+      context: ./logrotate
+    restart: always
+    volumes:
+      - docker-rsyslog-storage:/var/log
+    depends_on:
+      - rsyslog
 
 volumes:
   docker-rsyslog-storage:
