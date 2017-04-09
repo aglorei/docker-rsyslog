@@ -9,14 +9,25 @@ services:
       - "514:514/udp"
     volumes:
       - docker-rsyslog-storage:/var/log
+    networks:
+      - log-cluster-network
   logrotate:
     build:
       context: ./logrotate
     restart: always
     volumes:
       - docker-rsyslog-storage:/var/log
+    networks:
+      - log-cluster-network
+    logging:
+      driver: syslog
+      options:
+        syslog-address: "tcp://localhost:514"
     depends_on:
       - rsyslog
 
 volumes:
   docker-rsyslog-storage:
+
+networks:
+  log-cluster-network:
