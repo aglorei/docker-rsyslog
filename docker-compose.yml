@@ -10,7 +10,7 @@ services:
     volumes:
       - docker-rsyslog-storage:/var/log
     networks:
-      - log-cluster-network
+      - log-group-network
   logrotate:
     build:
       context: ./logrotate
@@ -18,7 +18,7 @@ services:
     volumes:
       - docker-rsyslog-storage:/var/log
     networks:
-      - log-cluster-network
+      - log-group-network
     logging:
       driver: syslog
       options:
@@ -30,4 +30,4 @@ volumes:
   docker-rsyslog-storage:
 
 networks:
-  log-cluster-network:
+  log-group-network:

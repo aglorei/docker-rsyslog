@@ -1,4 +1,4 @@
-# Rsyslog and Logrotate
+# Rsyslog and Logrotate Group
 
 This repository configures a host into a central syslog server with logrotate utility.
 
