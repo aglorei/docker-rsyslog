@@ -5,5 +5,6 @@ RUN apk add --no-cache logrotate
 VOLUME ["/var/log", "/etc/logrotate.d"]
 
 COPY ./rsyslog /etc/logrotate.d/rsyslog
+RUN chmod 0644 /etc/logrotate.d/rsyslog
 
 ENTRYPOINT ["crond", "-d", "6", "-f"]
